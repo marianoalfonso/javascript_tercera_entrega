@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.acciones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(243, 199, 199);
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.btnAcciones {
+    padding: 10px;
+}
+
+#espacioAereo {
+    display: grid;
+    grid-auto-columns: auto;
+    width: 50%;
+    margin: 10px;
+}
+
+.mensajeAlerta {
+    background-color: rgb(240, 69, 69);
+    color: white;
+}
+
+.busqueda {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(188, 233, 188);
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.agregarAvion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(228, 212, 192);
+    padding: 2px;
+    border: 2px solid black;
+}
+
+#panelResultados {
+    border: solid 1px black;
+    background-color: black;
+}
+
+.aeronave {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(150, 243, 207);
+    padding: 0px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.aeronave img {
+    width: 50px;
+    height: 30px;
+}
+
+.btnRecibirAeronave {
+    margin: 10px;
+}
+
+.aeronave .elemento {
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 9px;
+    border: 1px solid black;
+}
+
+.aeronave .boton {
+    padding: 15px;
+}

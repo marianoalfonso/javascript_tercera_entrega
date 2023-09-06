@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Entrega 2</title>
+
+    <!-- silenciamos el error 404 del favicon -->
+    <link rel="shortcut icon" href="#" />
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <h3>Pre Entrega 3</h1>
+    <h5>Mariano Alfonso (comision: 58110)</h2>
+    <br>
+    <h5>password: operador1</h4>
+    <br>
+
+    <header>
+
+        <section id="alerta" class="alerta">
+        </section>
+
+        <section class="acciones">
+            <p>Panel de acciones</p>
+            <div>
+                <button class="btnAcciones" id="verEspacioAereo">ver espacio aereo</button>
+            </div>
+            <div>
+                <button class="btnAcciones" id="aterrizarAeronave">aterrizar aeronave</button>
+            </div>
+            <div>
+                <button class="btnAcciones" id="avionesEnTierra">ver aeronaves en tierra</button>
+            </div>
+        </section>
+
+        <section class="busqueda">
+            <p>Panel de busqueda</p>
+            <input id="busquedaAerolinea">
+            <button class="btnAcciones" id="btnBuscarAerolinea">buscar</button>
+        </section>
+
+        <section class="agregarAvion">
+            <p><p>Panel de recepcion al espacio aereo</p></p>
+            <div>
+                <label for="matricula">matricula (###000)</label>
+                <input type="text" name="matricula" id="matricula">
+            </div>
+            <div>
+                <label for="companiasAereas">seleccione compania aerea:</label>
+                <select name="companiasAereas" id="companiaAerea">
+                    <option value="AEROLINEAS ARGENTINAS">Aerolineas Argentinas</option>
+                    <option value="ALITALIA">Alitalia</option>
+                    <option value="UNITED AIRLINES">United Airlines</option>
+                    <option value="DELTA AIRLINES">Delta Airlines</option>
+                </select>
+            </div>
+            <div class="btnRecibirAeronave">
+                <button class="btnAcciones" id="recibirAeronave">recibir aeronave al espacio aereo</button>
+            </div>
+        </section>
+
+    </header>
+    <!-- actividad del espacio aereo -->
+    <section id="panelResultados">
+    </section>
+
+
+</body>
+
+</html>

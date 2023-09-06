@@ -1,0 +1,80 @@
+Sistema generado y probado desde VSCode, utilizando LiveServer para su ejecucion.
+password para el ingreso: [operador1]
+
+El sistema pregunta si se desea cargar un array de elementos para testear el sistema, en caso
+de aceptarse, se carga un lote de datos de aviones entrantes, salientes y aterrizados, caso  contrario
+los arrays se inicializan vacios, debiendo alimentarse el sistema mediante las opciones que se
+ofrecen en la interfaz
+
+>>> localStorage <<<
+
+. Al declarar un avion en emergencia se genera la clave "emergenciaHora" y "emergenciaMatricula" 
+    en el localStorage.
+. Al autorizar el aterrizaje de la aeronave, se eliminan estas claves del localStorage.
+. En caso de cerrarse el programa, cuando vuelve a iniciarse se verifica el contenido del localStorage 
+    para identificar si existe alguna emergencia activa y se muestra en un mensaje resaltado en la parte 
+    superior de la pantalla.
+. No puede declararse otro avion en emergencia si existe alguna emergencia declarada sin resolver, esto se
+    verifica tambien contra el localStorage
+
+. Se guarda como objeto en el localStorage la informacion de los diferentes arrays que gestionan el estado, 
+    esto esta pensado a futuro para poder recuperar el estado del espacio aereo en caso de catastrofe en 
+    el sistema (cuelgue del navegador, cierre involuntario del navegador, etc.)
+
+    > al recibir un avion en el espacio aereo 
+        se borra la clave "avionesEntrantes" del localStorage y se vuelve a generar con la 
+        data del array actualizado
+
+    > al liberar un avion existente del espacio aereo 
+        se borra la clave "avionesSalientes" del localStorage y se vuelve a generar con la informacion 
+        del array actualizado
+
+    > al autorizar el despegue de un avion
+        se borra la clave "avionesSalientes" del localStorage y se vuelve a generar con la informacion 
+        del array actualizado
+
+
+>>> dom y eventos <<<
+
+Se genero un diseño basico pero funcional sobre el layout de la pagina. Para el proyecto final
+  se tiene como objetivo agregar las caracteristicas de las clases finales y la mejora del CSS
+  del proyecto en su totalidad .
+
+. Se genera de forma dinamica los listados en pantalla
+
+    > ver espacio aereo
+        genera dinamicamente el listado de todos los aviones entrantes, salientes y en 
+        emergencia que se encuentren en el espacio aereo y los muestra en el
+        panel de resultados
+
+    > aterrizar aeronave
+        autoriza el aterrizaje de una aeronave, lo cual se realiza en orden de ingreso
+        pasando el avion del array avionesEntrantes (elemento con index 0) al array avionesEnTierra
+
+    > ver aviones en tierra
+        genera dinamicamente el listado de todos los aviones aterrizados y los muestra en el
+        panel de resultados
+
+    > panel de busqueda
+        genera una busqueda del valor ingresado en el cuadro de texto, mostrando en el panel de
+        resultados todos los elementos que coincidann al menos parcialmente con el texto buscado
+
+    > recepcion de aeronave al espacio aereo
+        ingresa un avion al espacio aereo agregandolo al array avionesEntrantes mediante los
+        datos ingresados en el cuadro de texto de matricula y la aerolinea seleccionada en el
+        combo de aerolineas.
+        Se valida el formato de la matricula (3 caracteres + 3 numeros)
+        Se valida la no existencia de la matricula que se desea ingresar
+
+. En base a los resultados mostrados en forma de tarjetas en el panel de resultados, en base a
+  su estado se generan botones de accion de forma dinamica
+
+    > avion saliente: se generan los botones {liberar aeronave} y {declarar emergencia}
+
+    > avion entrante: se genera el boton {declarar emergencia}
+
+    > si el avion es declarado en emergencia, se informa tal situacion en el tag de estado, sin
+        generarse boton alguno ya que la unica accion que puede realizarse sobre este elemento
+        es el aterrizaje, el cual se realiza desde el boton del panel de acciones {aterrizar aeronave}
+        Tambien se muestra en la parte superior de la pantalla un aviso en rojo de la situacion
+            de emergencia, el cual desaparece una vez aterrizado el avion
